@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+}
+.container {
+    max-width: 400px;
+    margin: auto;
+}
+.title {
+    text-align: center;
+    margin-top: 15px;
+}
+#status-bar {
+    text-align: center;
+    margin: 15px 0;
+}
+.players {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+.player {
+    font-size: 40px;
+    border: 2px solid gray;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.active-player{
+    outline: 3px solid red;
+    transition: .2s;
+    animation: animate 1s linear infinite;
+}
+@keyframes animate {
+    0% {
+        outline: 3px solid red;
+    }
+    25% {
+        outline: 4px solid red;
+    }
+    50% {
+        outline: 5px solid red;
+    }
+    75% {
+        outline: 4px solid red;
+    }
+    100% {
+        outline: 3px solid red;
+    }
+}
+
+.graph {
+    border: 3px solid gray;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    font-family: monospace;
+    color: gray;
+    transition: .2s;
+}
+.graph:hover {
+    background: #efefef;
+}
+.game-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    cursor: pointer;
+}
+
+.bt-none{border-top: none;}
+.br-none{border-right: none;}
+.bb-none{border-bottom: none;}
+.bl-none{border-left: none;}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+#reset {
+    font-size: 18px;
+    padding: 5px 16px;
+    cursor: pointer;
+}
