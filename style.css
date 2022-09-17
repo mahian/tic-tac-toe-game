@@ -10,7 +10,7 @@ body{
 .container {
     max-width: 400px;
     margin: auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 .nav {
     display: flex;
@@ -84,6 +84,7 @@ body{
 .game-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin: 20px 0px;
 }
 
 .bt-none{border-top: none;}
@@ -119,7 +120,7 @@ body{
     margin-bottom: 15px;
     color: #118311;
 }
-.reset-btn {
+.reset-btn, .close-btn{
     height: 40px;
     width: 40px;
     font-size: 23px;
@@ -134,4 +135,9 @@ body{
 }
 .reset-btn:active {
     transform: scale(0.8);
+}
+@media only screen and (max-width: 600px){
+	.graph {
+        cursor: none;
+    }
 }
