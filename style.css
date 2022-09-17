@@ -8,7 +8,7 @@ body{
     background: #18191f;
 }
 .container {
-    max-width: 400px;
+    max-width: 380px;
     margin: auto;
     padding: 0 20px;
 }
@@ -33,7 +33,7 @@ body{
     align-items: center;
 }
 .player {
-    border: 2px solid #ffaaaa;
+    border: 2px solid #ff5606;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +41,7 @@ body{
     width: 60px;
     padding: 4px;
     border-radius: 8px;
-    background: #ffe6e6;
+    background: #ffeae1;
     font-size: 10px;
     font-weight: bold;
 }
@@ -136,8 +136,19 @@ body{
 .reset-btn:active {
     transform: scale(0.8);
 }
+.close-btn {
+    background-color: #ff5606;
+    border: none;
+    color: #f1f1f1;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    top: -15px;
+    right: -15px;
+}
 @media only screen and (max-width: 600px){
-	.graph {
+	.graph, .reset-btn, .close-btn {
         cursor: none;
     }
 }

@@ -78,3 +78,11 @@ const reset = ()=>{
         modal.style.display = 'none';
    }, 200);
 }
+
+// function to close modal
+const closeModal = ()=>{
+    modalBox.style.transform = 'scale(0)';
+    setTimeout(function(){
+        modal.style.display = 'none';
+    }, 200);
+}
