@@ -12,8 +12,11 @@
         <h1 class="title">Tic tac toe</h1>
         <p id="status-bar"></p>
         <div class="players">
-            <div id="one" class="player">X</div>
-            <div id="two" class="player">0</div>
+            <div id="one" class="player">
+                <img src="images/User_icon.png" alt="">
+                <span>player x</span>
+            </div>
+            <div></div>
         </div>
         <div class="game-container">
             <div class="graph bl-none bt-none"></div>
@@ -26,8 +29,21 @@
             <div class="graph bb-none"></div>
             <div class="graph bb-none br-none"></div>
         </div>
+        <div class="players">
+            <div></div>
+            <div id="two" class="player">
+                <img src="images/User_icon.png" alt="">
+                <span>player o</span>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modal-box">
+                <h3 id="won">x won</h3>
+                <button class="reset-btn" onclick="reset()">reset</button>
+            </div>
+        </div>
         <div class="btn-container">
-            <button id="reset" onclick="reset()">reset</button>
+            <button class="reset-btn" onclick="reset()">reset</button>
         </div>
     </div>
     <script src="main.js"></script>

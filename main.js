@@ -1,15 +1,17 @@
 // game important variable
 const graphs = document.querySelectorAll('.graph');
-let turn = 'X';
+let turn = 'x';
+const modal = document.querySelector('.modal');
+const modalBox = document.querySelector('.modal-box');
 let statusBar = document.getElementById('status-bar');
 statusBar.innerText = `turn for ${turn}`;
 
 // function to change turn
-const changeTurn = ()=> turn === 'X'? turn = '0': turn = 'X';
+const changeTurn = ()=> turn === 'x'? turn = 'o': turn = 'x';
 const channgePlayerTurn = ()=>{
     const playerOne = document.getElementById('one');
     const playerTwo = document.getElementById('two');
-    if(turn === '0'){
+    if(turn === 'o'){
         playerOne.classList.add("active-player");
         playerTwo.classList.remove("active-player");
     }else{
@@ -27,6 +29,12 @@ graphs.forEach(graph =>{
             changeTurn();
             channgePlayerTurn();
             graph.innerText = turn;
+            // change turn color
+            if(graph.innerText === 'o'){
+                graph.style.color = 'red';
+            }else{
+                graph.style.color = 'green';
+            }
         }
         checkWin();
     })
@@ -49,6 +57,10 @@ function checkWin(){
     wins.forEach(win =>{
         if((graphs[win[0]].innerText === graphs[win[1]].innerText) && (graphs[win[2]].innerText === graphs[win[1]].innerText) && graphs[win[0]].innerText !== ''){
             statusBar.innerText = `${graphs[win[0]].innerText} won`;
+            modal.style.display = 'flex';
+            setTimeout(function(){
+                modalBox.style.transform = 'scale(1)';
+           }, 200);
         }
     })
 }
@@ -59,4 +71,8 @@ const reset = ()=>{
         graph.innerText = '';
         statusBar.innerText = `turn for ${turn}`;
     });
+    modalBox.style.transform = 'scale(0)';
+    setTimeout(function(){
+        modal.style.display = 'none';
+   }, 200);
 }
