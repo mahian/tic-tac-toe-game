@@ -3,8 +3,9 @@ const graphs = document.querySelectorAll('.graph');
 let turn = 'x';
 const modal = document.querySelector('.modal');
 const modalBox = document.querySelector('.modal-box');
+const won = document.getElementById('won');
 let statusBar = document.getElementById('status-bar');
-statusBar.innerText = `turn for ${turn}`;
+statusBar.innerText = `Turn for ${turn}`;
 
 // function to change turn
 const changeTurn = ()=> turn === 'x'? turn = 'o': turn = 'x';
@@ -24,16 +25,16 @@ channgePlayerTurn();
 // all boxes EventListener
 graphs.forEach(graph =>{
     graph.addEventListener('click', ()=>{
-        statusBar.innerText = `turn for ${turn}`;
+        statusBar.innerText = `Turn for ${turn}`;
         if(graph.innerText === ''){
             changeTurn();
             channgePlayerTurn();
             graph.innerText = turn;
             // change turn color
             if(graph.innerText === 'o'){
-                graph.style.color = 'red';
+                graph.style.color = '#ff5151';
             }else{
-                graph.style.color = 'green';
+                graph.style.color = '#6aff6a';
             }
         }
         checkWin();
@@ -58,6 +59,7 @@ function checkWin(){
         if((graphs[win[0]].innerText === graphs[win[1]].innerText) && (graphs[win[2]].innerText === graphs[win[1]].innerText) && graphs[win[0]].innerText !== ''){
             statusBar.innerText = `${graphs[win[0]].innerText} won`;
             modal.style.display = 'flex';
+            won.innerText = `${turn} won`;
             setTimeout(function(){
                 modalBox.style.transform = 'scale(1)';
            }, 200);
@@ -69,7 +71,7 @@ function checkWin(){
 const reset = ()=>{
     graphs.forEach(graph =>{
         graph.innerText = '';
-        statusBar.innerText = `turn for ${turn}`;
+        statusBar.innerText = `Turn for ${turn}`;
     });
     modalBox.style.transform = 'scale(0)';
     setTimeout(function(){

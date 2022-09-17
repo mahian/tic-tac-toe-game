@@ -5,18 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tic-tac-toe</title>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Tic tac toe</h1>
-        <p id="status-bar"></p>
+        <div class="nav">
+            <h4 class="title">Tic tac toe</h4>
+            <p id="status-bar"></p>
+        </div>
         <div class="players">
             <div id="one" class="player">
                 <img src="images/User_icon.png" alt="">
                 <span>player x</span>
             </div>
-            <div></div>
+            <div>
+                <button class="reset-btn" onclick="reset()"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
         </div>
         <div class="game-container">
             <div class="graph bl-none bt-none"></div>
@@ -30,7 +36,9 @@
             <div class="graph bb-none br-none"></div>
         </div>
         <div class="players">
-            <div></div>
+            <div>
+                <button class="reset-btn" onclick="reset()"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
             <div id="two" class="player">
                 <img src="images/User_icon.png" alt="">
                 <span>player o</span>
@@ -39,11 +47,8 @@
         <div class="modal">
             <div class="modal-box">
                 <h3 id="won">x won</h3>
-                <button class="reset-btn" onclick="reset()">reset</button>
+                <button class="reset-btn" onclick="reset()"><i class="fa-solid fa-rotate-right"></i></button>
             </div>
-        </div>
-        <div class="btn-container">
-            <button class="reset-btn" onclick="reset()">reset</button>
         </div>
     </div>
     <script src="main.js"></script>
