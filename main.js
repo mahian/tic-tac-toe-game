@@ -7,8 +7,15 @@ const won = document.getElementById('won');
 let statusBar = document.getElementById('status-bar');
 statusBar.innerText = `Turn for ${turn}`;
 
+// sound
+const click = new Audio('sounds/click.wav');
+const winEffect = new Audio('sounds/win.wav');
+const backgroundSoundEffect = new Audio('sounds/background.mp3');
+
 // function to change turn
 const changeTurn = ()=> turn === 'x'? turn = 'o': turn = 'x';
+
+// function to change player turn
 const channgePlayerTurn = ()=>{
     const playerOne = document.getElementById('one');
     const playerTwo = document.getElementById('two');
@@ -27,6 +34,7 @@ graphs.forEach(graph =>{
     graph.addEventListener('click', ()=>{
         statusBar.innerText = `Turn for ${turn}`;
         if(graph.innerText === ''){
+            click.play();
             changeTurn();
             channgePlayerTurn();
             graph.innerText = turn;
@@ -62,7 +70,8 @@ function checkWin(){
             won.innerText = `${turn} won`;
             setTimeout(function(){
                 modalBox.style.transform = 'scale(1)';
-           }, 200);
+                winEffect.play();
+            }, 200);
         }
     })
 }
